@@ -1,0 +1,63 @@
+@use "../mixins";
+
+.clients {
+  margin-top: 70px;
+  @include mixins.mediaSize(mobile) {
+    margin-top: 60px;
+  }
+}
+
+.clients__carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.clients__carousel {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+  list-style: none;
+  gap: 100px;
+}
+
+.clients__carousel--right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.clients_item {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  min-width: max-content;
+}
+
+.clients_images {
+  max-width: 160px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.clients_images:hover {
+  filter: grayscale(0);
+}
+
+/* Анимации */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

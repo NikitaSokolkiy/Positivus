@@ -1,0 +1,84 @@
+@use "mixins";
+
+.container{
+  max-width: calc(1240px + (var(--container-padings) * 2));
+  margin: 0 auto;
+  @include mixins.flexDisplay();
+  padding: 0 34px;
+  @include mixins.mediaSize(mobile){
+    max-width: calc(390px + (var(--container-padings) * 2));
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.button{
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  @include mixins.border(true);
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  &:hover{
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+.button-alternative{
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  @include mixins.border(true);
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  @include mixins.mediaSize(mobile){
+    width: 100%;
+  }
+  &:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}
+
+
+
+@mixin mobile {
+  @media (max-width: 768px) { @content; }
+}
+
+.hidden-mobile{
+  display: flex;
+  @include mobile {
+    display: none;
+  }
+}
+
+.hidden-desktop{
+  display: none;
+  @include mobile{
+    display: flex;
+  }
+}
+
+.greenLabel{
+  background-color: var(--color-green);
+  border-radius: var(--green-border-radius);
+  padding: var(--green-padding);
+}

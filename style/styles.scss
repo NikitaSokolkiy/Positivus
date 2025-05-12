@@ -1,0 +1,16 @@
+@use "resetStyle";
+@use "fonts";
+@use "variable";
+@use "global";
+
+
+@use "blocks/header";
+@use 'blocks/hero';
+@use "blocks/clients";
+@use "blocks/services";
+@use "blocks/offer";
+@use "blocks/case";
+@use "blocks/working";
+
+
+@use "specClasses";

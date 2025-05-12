@@ -1,0 +1,26 @@
+@use "../mixins";
+
+.header{
+  margin-top: 60px;
+  @include mixins.mediaSize(mobile){
+    margin-top: 30px;
+  }
+  &__logo{
+    max-width: 220px;
+    max-height: 36px;
+  }
+  &__navigation{
+    @include mixins.flexDisplay();
+    gap: 40px;
+    @include mixins.mediaSize(tablet){
+      gap: 30px;
+    }
+    &-list{
+      @include mixins.flexDisplay();
+      gap: 40px;
+      @include mixins.mediaSize(tablet){
+        gap: 15px;
+      }
+    }
+  }
+}

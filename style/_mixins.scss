@@ -1,0 +1,38 @@
+@mixin clampFontSize ($min, $max){
+  font-size: clamp( $min * 1px, ($max / 1440 * 100) * 1vw, $max * 1px);
+}
+
+@mixin mediaSize($nameSize){
+  @if $nameSize == tablet{
+    @media (max-width: 1024px) {
+      @content
+    }
+  }
+  @else if($nameSize == mobile){
+    @media (max-width: 765px) {
+      @content
+    }
+  }
+  @else if($nameSize == desktop){
+    @media (max-width: 1440px) {
+      @content
+    }
+  }
+}
+
+@mixin border($hasBorder:true){
+  @if $hasBorder == true{
+    border: 1px solid var(--color-black);
+  }
+  @else{
+    border: none;
+  }
+}
+
+@mixin flexDisplay($direction: row, $align: center, $justify: space-between){
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+
+}

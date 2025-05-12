@@ -1,0 +1,65 @@
+/* Полный сброс стилей */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Сброс для таблиц */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Сброс для ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+/* Сброс для изображений */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Сброс для форм */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  resize: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Сброс для списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Сброс для анимаций и трансформаций */
+@keyframes reset {
+  from, to {
+    opacity: 1;
+    transform: none;
+  }
+}

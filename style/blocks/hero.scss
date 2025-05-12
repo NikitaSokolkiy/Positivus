@@ -1,0 +1,21 @@
+@use "../mixins";
+
+
+.hero{
+  @include mixins.flexDisplay();
+  width: 100%;
+  align-items: flex-start;
+  @include mixins.mediaSize(mobile){
+    justify-content: center;
+  }
+  &__content{
+    @include mixins.flexDisplay(column, flex-start);
+    max-width: 531px;
+    gap: 35px;
+    justify-content: start;
+  }
+  &__description{
+    line-height: 28px;
+    font-size: 20px;
+  }
+}

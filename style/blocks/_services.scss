@@ -1,0 +1,92 @@
+@use "../mixins";
+
+.services{
+  margin-top: 140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 85px;
+  @include mixins.mediaSize(mobile){
+    gap: 40px;
+  }
+  &__label{
+    @include mixins.flexDisplay(row, center, flex-start);
+    gap: 40px;
+    @include mixins.mediaSize(mobile){
+      @include mixins.flexDisplay(column);
+      gap: 30px;
+    }
+  }
+  &__description{
+    max-width: 580px;
+  }
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @include mixins.mediaSize(mobile){
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+    };
+  }
+  &__item{
+    @include mixins.flexDisplay();
+    padding: 50px;
+    box-shadow: var(--box-shadow-special);
+    border-radius: var(--card-border-radius);
+    border: var(--border);
+    align-items: flex-start;
+    @include mixins.mediaSize(tablet){
+      gap: 15px;
+    }
+    .card{
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      &__link{
+        @include mixins.flexDisplay(row, center, flex-start);
+        gap: 15px;
+        img{
+          background-color: var(--color-black);
+          width: 41px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          padding: 11px;
+        }
+      }
+    }
+    &-gray{
+      background-color: var(--color-gray);
+    }
+    &-green{
+      background-color: var(--color-green);
+    }
+    &-black{
+      background-color: var(--color-black);
+      .card{
+        &__link{
+          img{
+            background-color: #F3F3F3;
+          }
+         .card__btn{
+           color: var(--color-white);
+         }
+        }
+      }
+    }
+  }
+}
+
+.title-bgGreen{
+  background-color: var(--color-green);
+  border-radius: var(--green-border-radius);
+  padding: var(--green-padding);
+  width: fit-content;
+}
+.title-bgWhite{
+  background-color: var(--color-white);
+  border-radius: var(--green-border-radius);
+  padding: var(--green-padding);
+  width: fit-content;
+}
