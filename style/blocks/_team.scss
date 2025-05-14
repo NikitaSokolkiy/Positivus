@@ -1,0 +1,72 @@
+@use "../mixins";
+
+.team {
+  margin-top: 140px;
+  @include mixins.flexDisplay(column, none, end);
+  gap: 40px;
+  &__main{
+    @include mixins.flexDisplay(column, none, none);
+    gap: 85px;
+  }
+  &__label {
+    @include mixins.flexDisplay(row, center, start);
+    gap: 40px;
+  }
+
+  &__cards {
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      @include mixins.mediaSize(mobile) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+      }
+    }
+
+    &-item {
+      @include mixins.flexDisplay(column, none, none);
+      gap: 28px;
+      padding: 40px 35px;
+      background-color: var(--color-white);
+      border: var(--border);
+      border-radius: var(--card-border-radius);
+      box-shadow: var(--box-shadow-special);
+    }
+
+    &-title {
+      @include mixins.flexDisplay(row, end, none);
+      gap: 20px;
+      position: relative;
+    }
+
+    &-images {
+      filter: grayscale(120%) brightness(0.6) contrast(1.5);
+    }
+
+    &-person {
+      @include mixins.flexDisplay(column, start);
+    }
+
+    &-link {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 34px;
+      aspect-ratio: 1;
+      background-color: var(--color-black);
+      border-radius: 50%;
+      @include mixins.flexDisplay(row, center, center);
+    }
+
+    &-description {
+      padding: 28px 0 0 0;
+      border-top: var(--border);
+    }
+  }
+  &__all{
+    margin-left: auto;
+    width: 260px;
+  }
+
+}

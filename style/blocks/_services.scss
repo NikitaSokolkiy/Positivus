@@ -8,6 +8,8 @@
   gap: 85px;
   @include mixins.mediaSize(mobile){
     gap: 40px;
+    margin-top: 60px;
+    text-align: center;
   }
   &__label{
     @include mixins.flexDisplay(row, center, flex-start);

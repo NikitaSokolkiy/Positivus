@@ -4,12 +4,12 @@
   margin-top: 70px;
   @include mixins.mediaSize(mobile) {
     margin-top: 60px;
+    width: calc(100% + 60px);
   }
 }
 
 .clients__carousel-wrapper {
   overflow: hidden;
-  width: 100%;
 }
 
 .clients__carousel {
